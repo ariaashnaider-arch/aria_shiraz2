@@ -1,0 +1,8 @@
+*.db
+*.db-shm
+*.db-wal
+*.log
+.env
+.env.*
+backup/
+.DS_Store
