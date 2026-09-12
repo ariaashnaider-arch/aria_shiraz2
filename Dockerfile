@@ -2,8 +2,8 @@ FROM golang:1.22-alpine AS launcher-builder
 
 WORKDIR /src
 COPY go.mod ./
-RUN go mod download
 COPY main.go ./
+RUN go mod tidy
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
     go build -trimpath -ldflags="-s -w" -o /out/launcher .
 
